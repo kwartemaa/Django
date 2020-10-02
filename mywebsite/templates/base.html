@@ -1,21 +1,28 @@
-
-<!doctype html>
 {% load static %}
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>
+  {% block title %}
+    Untitled Document
+  {% endblock title %}
+</title>
 <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="wrapper">
   <header id="header">
-    <div id="logo"><img src="{% static 'logo.jpg' %}" alt=""/></div>
-    <div id="topbanner"><img src="{% static 'top_banner.png' %}" width="800" height="200" alt=""/></div>    
+    <div id="logo"><img src="{% static 'mylogo.jpg' %}"width="785" height="300" alt=""/></div>
+
   </header>
   <aside id="leftsidebar">
     <nav id="nav">
-    <ul><li>Menu 1</li><li>Menu 2</li><li>Menu 3</li></ul>
+    <ul>
+      {% block sidenav %}
+      <li>Menu 1</li><li>Menu 2</li><li>Menu 3</li>
+      {% endblock sidenav %}
+    </ul>
     </nav>
   </aside>
   <section id="main">
@@ -24,7 +31,7 @@
     <p>This is the site template</p>
     {% endblock content %}
   </section>
-  <footer id="footer">Copyright &copy; 2017 Annie's Web Design</footer>
+  <footer id="footer">Copyright &copy; 2020 Annie's Web Designs</footer>
 </div>
 </body>
 </html>
